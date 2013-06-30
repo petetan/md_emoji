@@ -28,7 +28,7 @@ module MdEmoji
           file_name    = "#{emoji.gsub('+', 'plus')}.png"
           default_size = %{height="20" width="20"}
 
-          %{<img src="/assets/emojis/#{file_name}" class="emoji" } +
+          %{<img src="#{ActionController::Base.helpers.asset_url("emojis/#{file_name}")}" class="emoji" } +
             %{title="#{emoji_code}" alt="#{emoji_code}" #{default_size}>}
         else
           emoji_code
